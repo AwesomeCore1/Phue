@@ -11,8 +11,8 @@ def auth_route():
         email = request.form["email"]
         password = request.form["code"]
 
-        if email.lower() == "vex@menudocs.org" and encryption_check(password) == True:
-            session['user'] = "vex"
+        if email.lower() == "rick@heddema.org" and encryption_check(password) == True:
+            session['user'] = "rick"
             return redirect('/')
         else:
             return render_template("login.html")
