@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
 
 # ROUTER IMPORTS
 from routers.auth import authRoute
@@ -13,11 +13,10 @@ app.register_blueprint(lightRoute, url_prefix="/api/")
 
 @app.route('/', methods=["GET"])
 def index_route():
-	content = "Please log in!"
-	if session.get("user") == "rick":
-		content = "Logged in!"
+	if session.get("user") != "rick":
+		return redirect('/auth')
 
-	return render_template('index.html', content=content)
+	return render_template('index.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)

@@ -11,7 +11,7 @@ def hue_route(light, hue):
     }
     return resp
 
-@light_handler.route('/bri/<light>/<brightness>', methods=["POST"])
+@lightRoute.route('/bri/<light>/<brightness>', methods=["POST"])
 def bri_route(light, brightness):
     light_handler.change_light(light=str(light), on=True, brightness=int(brightness))
     resp = {
