@@ -6,7 +6,7 @@ from routers.lights import light_route
 from routers.colours import colours_route
 
 app = Flask(__name__)
-app.secret_key = "ricksite"
+app.secret_key = "Ricksite"
 
 # REGISTER ROUTERS
 app.register_blueprint(auth_route, url_prefix="/auth")
