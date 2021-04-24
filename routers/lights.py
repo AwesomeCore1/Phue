@@ -18,3 +18,5 @@ def bri_route(light, brightness):
         "error": False, "output":"None"
     }
     return resp
+
+

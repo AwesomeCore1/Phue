@@ -10,10 +10,11 @@ def get_lights():
     return lights
 
 def change_light(light: str, on: bool=True, hue: str=None, saturation: int=255, brightness: int=255):
+    lights[light].on = on
+    lights[light].saturation = saturation
+    lights[light].brightness = brightness
     if hue is not None:
         xy = hue.split()
         lights[light].xy = [float(xy[0]), float(xy[1])]
 
-    lights[light].on = on
-    lights[light].saturation = saturation
-    lights[light].brightness = brightness
+    
